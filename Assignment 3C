@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class Assignment3C {
+    public Assignment3C() {
+    }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("[Cretaceous Park Dialog]\n");
+        System.out.print("Oh no, the power has gone out at Cretaceous Park!\n");
+        System.out.print("1) What does that mean?\n");
+        System.out.print("2) No, I just turned the light off.\n");
+        int answer = scan.nextInt();
+        if (answer == 1) {
+            System.out.print("What does that mean?");
+            System.out.print("\n");
+            System.out.print("\n");
+            System.out.print("The dinosaurs will get loose... again...\n");
+            System.out.print("1) Life finds a way...\n");
+            System.out.print("2) What do we do?\n");
+            int sec = scan.nextInt();
+            if (sec == 1) {
+                System.out.print("1) Life finds a way...\n");
+                System.out.print("\n");
+                System.out.print("That's not helpful right now!\n");
+                System.out.print("We need to evacuate the park!\n");
+            }
+
+            if (sec == 2) {
+                System.out.print(" What do we do?\n");
+                System.out.print("\n");
+                System.out.print("We have to evacuate the park!");
+            }
+        }
+
+        if (answer == 2) {
+            System.out.print("No, I just turned the light off.\n");
+            System.out.print("\n");
+            System.out.print("Oh thank goodness!");
+        }
+
+    }
+}
