@@ -1,0 +1,35 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class Lab6B {
+    public Lab6B() {
+    }
+
+    public static void main(String[] agrs) {
+        Scanner scan = new Scanner(System.in);
+        Random rand = new Random();
+        System.out.print("Enter a number between 1 and 1000: ");
+        int num = scan.nextInt();
+        int sum = 0;
+        int i = 0;
+
+        while(i <= 1000000) {
+            sum += i;
+            int guess = rand.nextInt(1000);
+            ++i;
+            if (num >= 1 && guess <= 1000) {
+                System.out.println("My guess was " + guess);
+                if (num != guess) {
+                    continue;
+                }
+
+                System.out.print("I guessed the number " + guess + " and it only took me " + i + " guesses");
+                break;
+            }
+
+            System.out.print("invalid");
+            break;
+        }
+
+    }
+}
