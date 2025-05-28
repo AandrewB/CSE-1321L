@@ -1,0 +1,24 @@
+import java.io.PrintStream;
+import java.util.Scanner;
+
+public class Lab3A {
+    public Lab3A() {
+    }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Amount owed: $");
+        float amount = scan.nextFloat();
+        System.out.print("APR: ");
+        float apr = scan.nextFloat();
+        float apr2 = apr / 100.0F;
+        float mpr = apr / 12.0F;
+        float mp = amount * apr2 / 12.0F;
+        PrintStream var10000 = System.out;
+        Object[] var10002 = new Object[]{mpr};
+        var10000.println("Monthly percentage rate: " + String.format("%.3f", var10002));
+        var10000 = System.out;
+        var10002 = new Object[]{mp};
+        var10000.println("Minimum payment: $" + String.format("%.2f", var10002));
+    }
+}
