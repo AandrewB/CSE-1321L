@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Lab3B {
+    public Lab3B() {
+    }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Course 1 hours: ");
+        float Ahours = scan.nextFloat();
+        System.out.print("Grade for course 1: ");
+        float Acourse = scan.nextFloat();
+        System.out.print("Course 2 hours: ");
+        float Bhours = scan.nextFloat();
+        System.out.print("Grade for course 2: ");
+        float Bcourse = scan.nextFloat();
+        System.out.print("Course 3 hours: ");
+        float Chours = scan.nextFloat();
+        System.out.print("Grade for course 3: ");
+        float Ccourse = scan.nextFloat();
+        System.out.print("Course 4 hours: ");
+        float Dhours = scan.nextFloat();
+        System.out.print("Grade for course 4: ");
+        float Dcourse = scan.nextFloat();
+        float totalhours = Ahours + Bhours + Chours + Dhours;
+        float totalpoints = Ahours * Acourse + Bhours * Bcourse + Chours * Ccourse + Dhours * Dcourse;
+        float gpa = totalpoints / totalhours;
+        System.out.println("Total hours is: " + totalhours);
+        System.out.println("Total quality points is: " + totalpoints);
+        System.out.println("Your GPA for this semester is " + gpa);
+    }
+}
