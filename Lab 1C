@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class Lab1C {
+    public Lab1C() {
+    }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter the number of miles: ");
+        int miles = scan.nextInt();
+        System.out.print("Enter the gallons of fuel used: ");
+        double gallons = scan.nextDouble();
+        double mpg = (double)miles * gallons;
+        System.out.println("Miles Per Gallon: " + mpg);
+    }
+}
