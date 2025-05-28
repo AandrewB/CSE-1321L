@@ -1,0 +1,67 @@
+import java.util.Random;
+
+public class Assignment6B {
+    public Assignment6B() {
+    }
+
+    public static boolean check_If_Sorted(int[] a1) {
+        for(int i = 0; i < a1.length - 1; ++i) {
+            if (a1[i] > a1[i + 1]) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public static int[] shuffleArray(int[] a1) {
+        int[] newArr = (int[])a1.clone();
+        Random rnd = new Random();
+
+        for(int i = newArr.length - 1; i > 0; --i) {
+            int index = rnd.nextInt(i + 1);
+            int temp = newArr[index];
+            newArr[index] = newArr[i];
+            newArr[i] = temp;
+        }
+
+        return newArr;
+    }
+
+    public static void printArray(int[] a1) {
+        System.out.print("Printing array... \n");
+        int[] var1 = a1;
+        int var2 = a1.length;
+
+        for(int var3 = 0; var3 < var2; ++var3) {
+            int i = var1[var3];
+            System.out.print("" + i + ",");
+        }
+
+        if (check_If_Sorted(a1)) {
+            System.out.println("\nHooray, it's sorted!");
+        } else {
+            System.out.println("\n Not sorted yet!\n");
+        }
+
+    }
+
+    public static void main(String[] args) {
+        int[] a1 = new int[17];
+        Random rnd = new Random();
+
+        int count;
+        for(count = 0; count < a1.length; ++count) {
+            a1[count] = rnd.nextInt(359) + 1;
+        }
+
+        printArray(a1);
+
+        for(count = 0; !check_If_Sorted(a1); ++count) {
+            a1 = shuffleArray(a1);
+            printArray(a1);
+        }
+
+        System.out.println("And it only took " + count + " attempts!");
+    }
+}
