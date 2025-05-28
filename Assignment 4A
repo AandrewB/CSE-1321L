@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+public class Assignment4A {
+    public Assignment4A() {
+    }
+
+    public static void main(String[] agrs) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("What loop do you want to use?\n1) A loop that might run zero or more times\n2) A loop that will always run at least once\n3) A loop with a predetermined start and end\nYour choice: ");
+        int answer = scan.nextInt();
+        int num;
+        byte i;
+        switch (answer) {
+            case 1:
+                System.out.print("What's your start number? ");
+                num = scan.nextInt();
+                i = 0;
+                System.out.print("Counting: ");
+                if (num >= i) {
+                    while(i <= num) {
+                        System.out.print("" + num + ", ");
+                        --num;
+                    }
+                }
+                break;
+            case 2:
+                System.out.print("What's your start number? ");
+                num = scan.nextInt();
+                i = 0;
+
+                do {
+                    System.out.print("Counting: " + num + ", ");
+                    --num;
+                } while(i <= num);
+
+                return;
+            case 3:
+                System.out.print("What's your start number? ");
+                num = scan.nextInt();
+                System.out.print("What's your end number? ");
+                int end = scan.nextInt();
+                System.out.print("Counting: ");
+                if (num >= end) {
+                    for(int i = false; num >= end; --num) {
+                        System.out.print("" + num + ", ");
+                    }
+                }
+        }
+
+    }
+}
