@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Lab3C {
+    public Lab3C() {
+    }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter the number of quarters: ");
+        int quarter = scan.nextInt();
+        System.out.print("Enter the number of dimes: ");
+        int dime = scan.nextInt();
+        System.out.print("Enter the number of nickels: ");
+        int nickel = scan.nextInt();
+        System.out.println("Enter the number of pennies: ");
+        int penny = scan.nextInt();
+        System.out.println("You entered " + quarter + " quarters.");
+        System.out.println("You entered " + dime + " dimes.");
+        System.out.println("You entered " + nickel + " nickels.");
+        System.out.println("You entered " + penny + " Pennies.");
+        double totalq = 0.25 * (double)quarter;
+        double totald = 0.1 * (double)dime;
+        double totaln = 0.05 * (double)nickel;
+        double totalp = 0.01 * (double)penny;
+        double all = totalq + totald + totaln + totalp;
+        double all2 = all * 100.0;
+        double cents = (double)((float)all2 % 100.0F);
+        double dollars = (double)((int)all2 / 100);
+        System.out.println(" ");
+        System.out.println("Your total is " + (int)dollars + " dollars and " + (int)cents + " cents.");
+    }
+}
