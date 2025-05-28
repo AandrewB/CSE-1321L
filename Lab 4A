@@ -1,0 +1,64 @@
+import java.util.Scanner;
+
+public class Lab4A {
+    public Lab4A() {
+    }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("enter the score of your exam: ");
+        float number = scan.nextFloat();
+        if ((double)number >= 97.5 && (double)number <= 100.0) {
+            System.out.print("Letter grade is: A+");
+        }
+
+        if ((double)number >= 94.5 && number <= 97.0F) {
+            System.out.print("Letter grade is: A");
+        }
+
+        if ((double)number >= 91.5 && number <= 94.0F) {
+            System.out.print("Letter grade is: A-");
+        }
+
+        if ((double)number >= 88.5 && number <= 91.0F) {
+            System.out.print("Letter grade is: B+");
+        }
+
+        if ((double)number >= 85.5 && number <= 88.0F) {
+            System.out.print("Letter grade is: B");
+        }
+
+        if ((double)number >= 82.5 && number <= 85.0F) {
+            System.out.print("Letter grade is: B-");
+        }
+
+        if ((double)number >= 79.5 && number <= 82.0F) {
+            System.out.print("Letter grade is: C+");
+        }
+
+        if ((double)number >= 76.5 && number <= 79.0F) {
+            System.out.print("Letter grade is: C");
+        }
+
+        if ((double)number >= 73.5 && number <= 76.0F) {
+            System.out.print("letter grade is: C-");
+        }
+
+        if ((double)number >= 70.5 && number <= 73.0F) {
+            System.out.print("Letter grade is: D+");
+        }
+
+        if ((double)number >= 67.5 && number <= 70.0F) {
+            System.out.print("Letter grade is: D");
+        }
+
+        if ((double)number >= 64.5 && number <= 67.0F) {
+            System.out.print("Letter grade is: D-");
+        }
+
+        if (number >= 0.0F && number <= 64.0F) {
+            System.out.print("Letter grade is: F");
+        }
+
+    }
+}
