@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class Lab5B {
+    public Lab5B() {
+    }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter an integer: ");
+        int number = scan.nextInt();
+        if (number % 2 == 0) {
+            number = 2;
+        } else if (number % 3 == 0) {
+            number = 3;
+        } else if (number % 5 == 0) {
+            number = 5;
+        }
+
+        switch (number) {
+            case 2:
+                System.out.print("This number is divisible by 2");
+                break;
+            case 3:
+                System.out.print("This number is divisible by 3");
+                break;
+            case 4:
+            default:
+                System.out.print("This number is undetermined");
+                break;
+            case 5:
+                System.out.print("This number is divisible by 5");
+        }
+
+    }
+}
