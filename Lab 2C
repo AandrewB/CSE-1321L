@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class Lab2C {
+    public Lab2C() {
+    }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter a width:");
+        int width = scan.nextInt();
+        System.out.print("Enter a height:");
+        int height = scan.nextInt();
+        int area = width * height;
+        int perimeter = 2 * (width + height);
+        System.out.println("The area is " + area);
+        System.out.println("The perimeter is " + perimeter);
+    }
+}
