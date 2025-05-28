@@ -1,0 +1,67 @@
+import java.util.Scanner;
+
+public class Assignment4B {
+    public Assignment4B() {
+    }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int size = -1;
+
+        while(size <= 0) {
+            System.out.print("Enter the size of the square: ");
+            size = scan.nextInt();
+            if (size <= 0) {
+                System.out.println("Invalid input!");
+            }
+        }
+
+        int borderSize = -1;
+
+        while(borderSize <= 0) {
+            System.out.print("Enter the size of the border: ");
+            borderSize = scan.nextInt();
+            if (borderSize <= 0) {
+                System.out.println("Invalid input!");
+            }
+        }
+
+        int squareColor = -1;
+
+        while(squareColor != 0 && squareColor != 1) {
+            System.out.print("Enter the color of the square: ");
+            squareColor = scan.nextInt();
+            if (squareColor != 0 && squareColor != 1) {
+                System.out.println("Invalid input!");
+            }
+        }
+
+        int borderColor = -1;
+
+        while(borderColor != 0 && borderColor != 1) {
+            System.out.print("Enter the color of the border: ");
+            borderColor = scan.nextInt();
+            if (borderColor != 0 && borderColor != 1) {
+                System.out.println("Invalid input!");
+            }
+        }
+
+        int total = squareColor + size + borderSize + borderColor;
+        System.out.println("P1");
+        System.out.println("" + total + " " + total);
+        System.out.println(" ");
+
+        for(int i = 0; i < size + borderSize * 2; ++i) {
+            for(int j = 0; j < size + borderSize * 2; ++j) {
+                if (i >= borderSize && i < size + borderSize && j >= borderSize && j < size + borderSize) {
+                    System.out.print("" + squareColor + " ");
+                } else {
+                    System.out.print("" + borderColor + " ");
+                }
+            }
+
+            System.out.println();
+        }
+
+    }
+}
