@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Assignment3B {
+    public Assignment3B() {
+    }
+
+    public static void main(String[] agrs) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("[Image Encoding Checker]\n");
+        System.out.print("What is the image width? ");
+        int width = scan.nextInt();
+        System.out.print("What is the image height? ");
+        int height = scan.nextInt();
+        System.out.print("What is the file size (in bytes)? ");
+        int size = scan.nextInt();
+        int RBG = width * height * 3;
+        int RGB2 = size / RBG;
+        switch (RGB2) {
+            case 1:
+                System.out.print("The RGB image is encoded with 8 bits per channel.");
+                break;
+            case 2:
+                System.out.print("The RGB image is encoded with 16 bits per channel.");
+                break;
+            case 3:
+                System.out.print("The RGB image is encoded with 32 bits per channel.");
+                break;
+            default:
+                System.out.print("The information is invalid – please re-enter it.");
+        }
+
+    }
+}
