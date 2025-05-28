@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class Assignment2A {
+    public Assignment2A() {
+    }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("First number: ");
+        int first = scan.nextInt();
+        System.out.print("Second number: ");
+        int second = scan.nextInt();
+        System.out.print("Number for Modulo Operation: ");
+        int modulo = scan.nextInt();
+        int plus = first + second;
+        int minus = first - second;
+        int divide = first / second;
+        int multiply = first * second;
+        int remainderplus = plus % modulo;
+        int remainderminus = minus % modulo;
+        int remainderdivide = divide % modulo;
+        int remaindermultiply = multiply % modulo;
+        System.out.println("" + first + " + " + second + " = " + plus + ". The remainder if divided by " + modulo + " is " + remainderplus);
+        System.out.println("" + first + " - " + second + " = " + minus + ". The remainder if divided by " + modulo + " is " + remainderminus);
+        System.out.println("" + first + " / " + second + " = " + divide + ". The remainder if divided by " + modulo + " is " + remainderdivide);
+        System.out.println("" + first + " * " + second + " = " + multiply + " (Approximately). The remainder if divided by " + modulo + " is " + remaindermultiply);
+    }
+}
