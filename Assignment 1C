@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Assignment1C {
+    public Assignment1C() {
+    }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter the day(number):");
+        int day = scan.nextInt();
+        System.out.print("Enter the month (number)");
+        int month = scan.nextInt();
+        System.out.print("Enter the month (String)");
+        String month1 = scan.next();
+        System.out.print("Enter the year (number)");
+        int year = scan.nextInt();
+        System.out.println("Here are some ways to represent the date:");
+        System.out.println("" + day + "/" + month + "/" + year);
+        System.out.println("" + year + "/" + month + "/" + day);
+        System.out.println("" + month + "/" + day + "/" + year);
+        System.out.println(month1 + " " + day + ", " + year);
+        System.out.print("" + day + " " + month1 + " " + year);
+    }
+}
