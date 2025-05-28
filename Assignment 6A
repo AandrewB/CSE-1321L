@@ -1,0 +1,61 @@
+import java.util.Random;
+
+public class Assignment6A {
+    public Assignment6A() {
+    }
+
+    public static int Binary(int[] array, int value) {
+        int guess = 0;
+        int low = 0;
+        int high = array.length - 1;
+        int index = Integer.MAX_VALUE;
+
+        while(low <= high) {
+            int mid = low + (high - low) / 2;
+            ++guess;
+            if (array[mid] < value) {
+                low = mid + 1;
+            } else if (array[mid] > value) {
+                high = mid - 1;
+            } else if (array[mid] == value) {
+                break;
+            }
+        }
+
+        return guess;
+    }
+
+    public static int Linear(int[] array, int value) {
+        int length = array.length;
+        int count = 0;
+
+        for(int i = 0; i < length; ++i) {
+            ++count;
+            if (array[i] == value) {
+                break;
+            }
+        }
+
+        return count;
+    }
+
+    public static void main(String[] args) {
+        int arraysize = 1000000;
+        int[] array = new int[arraysize];
+
+        for(int i = 0; i < arraysize; array[i] = i++) {
+        }
+
+        Random rand = new Random();
+        int value = rand.nextInt(arraysize);
+        int Linear = Linear(array, value);
+        int Binary = Binary(array, value);
+        System.out.print("[Linear Vs. Binary Search]\nThe target value is " + value + "\nLinear Search: " + Linear + " loop(s)\nBinary Search: " + Binary + " guess(es)");
+        if (Linear > Binary) {
+            System.out.print("\nBinary Search is faster this time!");
+        } else {
+            System.out.print("\nLinear Search is faster this time1");
+        }
+
+    }
+}
