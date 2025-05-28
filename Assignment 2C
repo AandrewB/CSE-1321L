@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class Assignment2C {
+    public Assignment2C() {
+    }
+
+    public static void main(String[] args) {
+        int ANIMAL_CRACKERS = true;
+        double MOON = 2.6E-9;
+        Scanner scan = new Scanner(System.in);
+        System.out.print("\n[Distance Calculator]");
+        System.out.print("\nHow many meters? ");
+        double meters = scan.nextDouble();
+        double crackermeters = meters * 40.0;
+        double moonmeters = meters * 2.6E-9;
+        System.out.println((int)meters + " meter(s) is...");
+        System.out.println("..." + moonmeters + " distance from the Moon");
+        System.out.println("..." + (int)crackermeters + " Animal Crackers long");
+    }
+}
