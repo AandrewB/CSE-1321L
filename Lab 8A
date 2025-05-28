@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class Lab8A {
+    public Lab8A() {
+    }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Please enter 5 integers for the first array:\n");
+        System.out.print("Integer 1: ");
+        int a = scan.nextInt();
+        System.out.print("Integer 2: ");
+        int b = scan.nextInt();
+        System.out.print("Integer 3: ");
+        int c = scan.nextInt();
+        System.out.print("Integer 4: ");
+        int d = scan.nextInt();
+        System.out.print("Integer 5: ");
+        int e = scan.nextInt();
+        System.out.println("\nPlease enter 5 integers for the second array:");
+        System.out.print("Integer 1: ");
+        int f = scan.nextInt();
+        System.out.print("Integer 2: ");
+        int g = scan.nextInt();
+        System.out.print("Integer 3: ");
+        int h = scan.nextInt();
+        System.out.print("Integer 4: ");
+        int I = scan.nextInt();
+        System.out.print("Integer 5: ");
+        int j = scan.nextInt();
+        int[] var10000 = new int[]{a, b, c, d, e};
+        var10000 = new int[]{f, g, h, I, j};
+        int k = a + f;
+        int l = b + g;
+        int m = c + h;
+        int n = d + I;
+        int o = e + j;
+        System.out.print("\nThe resulting sums are ");
+        int[] ThirdArray = new int[]{k, l, m, n, o};
+
+        for(int i = 0; i < ThirdArray.length; ++i) {
+            System.out.print(ThirdArray[i] + "|");
+        }
+
+    }
+}
