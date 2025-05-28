@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class Lab4B {
+    public Lab4B() {
+    }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter the day: ");
+        switch (scan.nextLine()) {
+            case "monday":
+                System.out.print("I have class today!");
+                break;
+            case "Monday":
+                System.out.print("I have class today!");
+                break;
+            case "wednesday":
+                System.out.print("I have class today!");
+                break;
+            case "Wednesday":
+                System.out.print("I have class today!");
+                break;
+            case "tuesday":
+                System.out.print("I should use this time to do my homework.");
+                break;
+            case "Tuesday":
+                System.out.print("I should use this time to do my homework.");
+                break;
+            case "thursday":
+                System.out.print("I should use this time to do my homework.");
+                break;
+            case "Thursday":
+                System.out.print("I should use this time to do my homework.");
+                break;
+            case "friday":
+                System.out.print("It's Friday! Friday! Gotta get down on Friday!");
+                break;
+            case "Friday":
+                System.out.print("It's Friday! Friday! Gotta get down on Friday!");
+        }
+
+    }
+}
