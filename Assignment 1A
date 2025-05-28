@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+class Assignment1A {
+    Assignment1A() {
+    }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter a red value (0-255): ");
+        double red = scan.nextDouble();
+        System.out.print("Enter a green value (0-255): ");
+        double green = scan.nextDouble();
+        System.out.print("Enter a blue value (0-255): ");
+        double blue = scan.nextDouble();
+        double blueinvert = 255.0 - blue;
+        double redinvert = 255.0 - red;
+        double greeninvert = 255.0 - green;
+        double redfloat = redinvert / 255.0;
+        double greenfloat = greeninvert / 255.0;
+        double bluefloat = blueinvert / 255.0;
+        System.out.println("The inverted color is red= " + redinvert);
+        System.out.println("The inverted color is green= " + greeninvert);
+        System.out.println("The inverted color is blue= " + blueinvert);
+        System.out.println("with floating points, that would be red=" + redfloat);
+        System.out.println("with floating points, that would be green=" + greenfloat);
+        System.out.println("with floating points, that would be blue=" + bluefloat);
+    }
+}
