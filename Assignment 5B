@@ -1,0 +1,94 @@
+import java.util.Scanner;
+
+public class Assignment5B {
+    public Assignment5B() {
+    }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("[KSU Image Manipulation Program]");
+        System.out.print("\nEnter the image width: ");
+        int width = scan.nextInt();
+        System.out.print("Enter the image height: ");
+        int height = scan.nextInt();
+        System.out.print("Enter the fill color: ");
+        int fill = scan.nextInt();
+        int[][] array = new int[height][width];
+
+        int choice;
+        for(choice = 0; choice < height && choice < width; ++choice) {
+        }
+
+        do {
+            System.out.print("\nWhat will you do?\n1) Fill in a pixel\n2) Fill in a line\n3) Print the image\n4) Quit\nChoice? ");
+            choice = scan.nextInt();
+            int i;
+            int j;
+            int color;
+            if (choice == 1) {
+                System.out.print("\nRow: ");
+                i = scan.nextInt();
+                System.out.print("Column: ");
+                j = scan.nextInt();
+                System.out.print("Color: ");
+                color = scan.nextInt();
+                if (0 <= i && i < height && 0 <= j && j < width && 0 <= color && color <= 255) {
+                    array[i][j] = color - fill;
+                } else {
+                    System.out.print("invalid information! \n");
+                }
+            } else if (choice == 2) {
+                System.out.print("\nRow: ");
+                i = scan.nextInt();
+                System.out.print("Column: ");
+                j = scan.nextInt();
+                System.out.print("New Color: ");
+                color = scan.nextInt();
+                System.out.print("Length: ");
+                int length = scan.nextInt();
+                System.out.print("Direction: ");
+                String dir = scan.next();
+                boolean valid = true;
+                int r = i;
+                int c = j;
+
+                for(int i = 0; i < length && valid; ++i) {
+                    if (r >= 0 && r < height && c >= 0 && c < width) {
+                        array[r][c] = color - fill;
+                        switch (dir) {
+                            case "left":
+                                --c;
+                                break;
+                            case "right":
+                                ++c;
+                                break;
+                            case "up":
+                                --r;
+                                break;
+                            case "down":
+                                ++r;
+                                break;
+                            default:
+                                valid = false;
+                        }
+                    } else {
+                        valid = false;
+                    }
+                }
+            } else if (choice == 3) {
+                System.out.print("PGM Image Contents\nP2\n255\n");
+                System.out.println("" + width + " " + height);
+
+                for(i = 0; i < height; ++i) {
+                    for(j = 0; j < width; ++j) {
+                        System.out.print(array[i][j] + fill + " ");
+                    }
+
+                    System.out.println();
+                }
+            }
+        } while(choice != 4);
+
+        System.out.println("\n[Exiting KSU Image  Manipulation Program]");
+    }
+}
