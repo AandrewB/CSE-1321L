@@ -1,0 +1,85 @@
+import java.io.PrintStream;
+import java.util.Scanner;
+
+public class Assignment6C {
+    public Assignment6C() {
+    }
+
+    public static int surprise_function(int num1, int num2) {
+        return num1 + num2;
+    }
+
+    public static float surprise_function(float num1, float num2) {
+        return num1 / num2;
+    }
+
+    public static double surprise_function(double num1, double num2) {
+        return num1 % num2;
+    }
+
+    public static boolean surprise_function(boolean bool1, boolean bool2) {
+        return bool1 && bool2;
+    }
+
+    public static String surprise_function(char char1, char char2) {
+        String var10000 = Character.toString(char1);
+        return var10000 + Character.toString(char2);
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("What data type do you want to enter? ");
+        String dataType = scanner.next();
+        PrintStream var10000;
+        if (dataType.equals("integer")) {
+            System.out.print("Value #1: ");
+            int num1 = scanner.nextInt();
+            System.out.print("Value #2: ");
+            int num2 = scanner.nextInt();
+            System.out.println("calling surprise_function()...");
+            var10000 = System.out;
+            int var10001 = surprise_function(num1, num2);
+            var10000.print("The result is " + var10001);
+        } else if (dataType.equals("float")) {
+            System.out.print("Value #1: ");
+            float num1 = scanner.nextFloat();
+            System.out.print("Value #2: ");
+            float num2 = scanner.nextFloat();
+            System.out.println("calling surprise_function()...");
+            var10000 = System.out;
+            float var14 = surprise_function(num1, num2);
+            var10000.print("The result is " + var14);
+        } else if (dataType.equals("double")) {
+            System.out.print("Value #1: ");
+            double num1 = scanner.nextDouble();
+            System.out.print("Value #2: ");
+            double num2 = scanner.nextDouble();
+            System.out.println("calling surprise_function()...");
+            var10000 = System.out;
+            double var15 = surprise_function(num1, num2);
+            var10000.print("The result is " + var15);
+        } else if (dataType.equals("boolean")) {
+            System.out.print("Value #1: ");
+            boolean bool1 = scanner.nextBoolean();
+            System.out.print("Value #2: ");
+            boolean bool2 = scanner.nextBoolean();
+            System.out.println("calling surprise_function()...");
+            var10000 = System.out;
+            boolean var16 = surprise_function(bool1, bool2);
+            var10000.print("The result is " + var16);
+        } else if (dataType.equals("char")) {
+            System.out.print("Value #1: ");
+            char char1 = scanner.next().charAt(0);
+            System.out.print("Value #2: ");
+            char char2 = scanner.next().charAt(0);
+            System.out.println("calling surprise_function()...");
+            var10000 = System.out;
+            String var17 = surprise_function(char1, char2);
+            var10000.print("The result is " + var17);
+        } else {
+            System.out.println("Invalid data type.");
+        }
+
+        scanner.close();
+    }
+}
