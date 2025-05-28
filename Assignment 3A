@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class Assignment3A {
+    public Assignment3A() {
+    }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("[Cretaceous Park GIS]\n");
+        System.out.print("X Coordinate: ");
+        double x = scan.nextDouble();
+        System.out.print("Y Coordinate: ");
+        double y = scan.nextDouble();
+        if (x <= 0.0 && y <= 8.0 || x <= 4.0 && y <= 1.0 || x >= 2.0 && x <= 4.0 && y >= 7.0 && y <= 8.0 || x == 5.0 && y >= 3.0 && y <= 4.0) {
+            System.out.print("You are at the Triceratops Grasslands");
+        }
+
+        if (x <= 4.0 && x >= 2.0 && y >= 2.0 && y <= 6.0) {
+            System.out.print("You are at the T. Rex Lake");
+        }
+
+        if (x >= 5.0 && x <= 8.0 && y == 1.0) {
+            System.out.print("You are at the Pterodactyl Aviary");
+        }
+
+        if (x >= 6.0 && x <= 8.0 && y >= 2.0 && y <= 4.0) {
+            System.out.print("You are at the Visitor's Center");
+        }
+
+        if (x >= 5.0 && x <= 8.0 && y >= 5.0 && y <= 8.0) {
+            System.out.print("You are at the Deinonychus Pen");
+        } else {
+            System.out.print("WARNING: You have left the boundaries of the park.\n");
+            System.out.print("Please return immediately.");
+        }
+
+    }
+}
