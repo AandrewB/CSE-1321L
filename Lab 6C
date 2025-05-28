@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class Lab6C {
+    public Lab6C() {
+    }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        char userInput = true;
+        int total = 1000;
+        System.out.print("Welcome!\nYou have $1000 in your account.");
+
+        char userInput;
+        do {
+            System.out.print("\n\nMenu\n");
+            System.out.print("0 - Make a deposit\n");
+            System.out.print("1 - Make a withdrawal\n");
+            System.out.print("2 - Display account value\n");
+            System.out.print("Please make a selection: ");
+            int select = scan.nextInt();
+            if (select == 0) {
+                System.out.print("How much would you like to deposit? : ");
+                int deposit = scan.nextInt();
+                int x = total + deposit;
+                total = x;
+                System.out.print("Your current balance is $" + x);
+            } else if (select == 1) {
+                System.out.print("How much would you like to withdraw? : ");
+                int withdrawal = scan.nextInt();
+                int y = total - withdrawal;
+                total = y;
+                System.out.print("Your current balance is $" + y);
+            } else if (select == 2) {
+                System.out.print("Your current balance is $" + total);
+            }
+
+            System.out.print("\nWould you like to return to the main menu (Y/N)? : ");
+            userInput = scan.next().charAt(0);
+            if (select > 2) {
+                System.out.print("Invalid entry, please try again.");
+            }
+        } while(userInput != 'N');
+
+        System.out.print("\nThank you for banking with us!");
+    }
+}
