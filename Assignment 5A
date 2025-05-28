@@ -1,0 +1,87 @@
+import java.util.Scanner;
+
+public class Assignment5A {
+    public Assignment5A() {
+    }
+
+    public static void main(String[] agrs) {
+        Scanner scan = new Scanner(System.in);
+        String[] name0 = new String[]{"0", "Mark Sloan", "Age 67", "Chief of Internal Medicine", "TRUE"};
+        String[] name1 = new String[]{"1", "Amanda Bentley", "Age 33", "Pathologist", "TRUE"};
+        String[] name2 = new String[]{"2", "Norman Briggs ", "Age 47", "Administrator", "FALSE"};
+        String[] name3 = new String[]{"3", "Steve Sloan", "Age 35", "Hospital Security", "FALSE"};
+        String[] name4 = new String[]{"4", "Jesse Travis", "Age 24", "Surgeon Intern", "TRUE"};
+        System.out.println("[Community General Hospital Directory]");
+
+        int choice;
+        do {
+            System.out.print("1) List all employees\n2) Search employee records by ID\n3) Search employee records by Last Name\n4) Quit\n");
+            System.out.print("Choice: ");
+            choice = scan.nextInt();
+            if (choice == 1) {
+                System.out.println("\n#" + name0[0] + ": " + name0[1] + ", " + name0[2] + ", " + name0[3] + ": " + name0[4]);
+                System.out.println("#" + name1[0] + ": " + name1[1] + ", " + name1[2] + ", " + name1[3] + ": " + name1[4]);
+                System.out.println("#" + name2[0] + ": " + name2[1] + ", " + name2[2] + ", " + name2[3] + ": " + name2[4]);
+                System.out.println("#" + name3[0] + ": " + name3[1] + ", " + name3[2] + ", " + name3[3] + ": " + name3[4]);
+                System.out.println("#" + name4[0] + ": " + name4[1] + ", " + name4[2] + ", " + name4[3] + ": " + name4[4] + "\n");
+            }
+
+            int ID;
+            if (choice == 2) {
+                do {
+                    System.out.print("ID: ");
+                    ID = scan.nextInt();
+                    switch (ID) {
+                        case 0:
+                            System.out.println("#" + name0[0] + ": " + name0[1] + ", " + name0[2] + ", " + name0[3] + ": " + name0[4] + "\n");
+                            break;
+                        case 1:
+                            System.out.println("#" + name1[0] + ": " + name1[1] + ", " + name1[2] + ", " + name1[3] + ": " + name1[4] + "\n");
+                            break;
+                        case 2:
+                            System.out.println("#" + name2[0] + ": " + name2[1] + ", " + name2[2] + ", " + name2[3] + ": " + name2[4] + "\n");
+                            break;
+                        case 3:
+                            System.out.println("#" + name3[0] + ": " + name3[1] + ", " + name3[2] + ", " + name3[3] + ": " + name3[4] + "\n");
+                            break;
+                        case 4:
+                            System.out.println("#" + name4[0] + ": " + name4[1] + ", " + name4[2] + ", " + name4[3] + ": " + name4[4] + "\n");
+                            break;
+                        default:
+                            System.out.println("invalid ID");
+                    }
+                } while(ID < 0 || ID > 4);
+            }
+
+            if (choice == 3) {
+                System.out.print("Last Name: ");
+                switch (scan.next()) {
+                    case "Sloan":
+                        System.out.println("#" + name0[0] + ": " + name0[1] + ", " + name0[2] + ", " + name0[3] + ": " + name0[4] + "\n");
+                        System.out.println("#" + name3[0] + ": " + name3[1] + ", " + name3[2] + ", " + name3[3] + ": " + name3[4] + "\n");
+                        break;
+                    case "Bentley":
+                        System.out.println("#" + name1[0] + ": " + name1[1] + ", " + name1[2] + ", " + name1[3] + ": " + name1[4] + "\n");
+                        break;
+                    case "Briggs":
+                        System.out.println("#" + name2[0] + ": " + name2[1] + ", " + name2[2] + ", " + name2[3] + ": " + name2[4] + "\n");
+                        break;
+                    case "Travis":
+                        System.out.println("#" + name4[0] + ": " + name4[1] + ", " + name4[2] + ", " + name4[3] + ": " + name4[4] + "\n");
+                        break;
+                    default:
+                        System.out.println("No Records Found!");
+                }
+            }
+
+            if (choice == 4) {
+                System.out.print("[Closing Directory...]");
+            }
+
+            if (choice < 0 || choice > 4) {
+                System.out.print("No option " + choice + "!\n");
+            }
+        } while(choice != 4);
+
+    }
+}
