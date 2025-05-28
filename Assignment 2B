@@ -1,0 +1,27 @@
+import java.io.PrintStream;
+import java.util.Scanner;
+
+public class Assignment2B {
+    public Assignment2B() {
+    }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("\n[Fast-Forward]");
+        System.out.print("\nWhat is the original video time? ");
+        float originaltime = scan.nextFloat();
+        System.out.print("\nWhat is the playback speed factor? ");
+        float originalspeed = scan.nextFloat();
+        double time2 = (double)originaltime / 0.01;
+        int minutes = (int)time2 / 100;
+        int seconds = minutes * 60;
+        int remains = (int)time2 % 100;
+        double mps = (double)(seconds + remains);
+        PrintStream var10000 = System.out;
+        Object[] var10002 = new Object[]{mps / (double)originalspeed};
+        var10000.print("\nThe new video time would be " + String.format("%.0f", var10002) + " second(s).");
+        var10000 = System.out;
+        var10002 = new Object[]{mps - mps / (double)originalspeed};
+        var10000.print("\nThat saves you " + String.format("%.0f", var10002) + " second(s) from the original video speed.");
+    }
+}
