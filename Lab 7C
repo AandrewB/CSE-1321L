@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Lab7C {
+    public Lab7C() {
+    }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Please enter a value for the size: ");
+        int num = scan.nextInt();
+        System.out.println("This is the requested " + num + "x" + num + " right-triangle:");
+
+        for(int i = 0; i < num; ++i) {
+            int j;
+            for(j = 2 * (num - i); j >= 0; --j) {
+                System.out.print(" ");
+            }
+
+            for(j = 0; j <= i; ++j) {
+                System.out.print("* ");
+            }
+
+            System.out.println();
+        }
+
+    }
+}
