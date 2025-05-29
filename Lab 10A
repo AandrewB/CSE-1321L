@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Lab10A {
+    public Lab10A() {
+    }
+
+    public static int FindMaxValue(int num1, int num2) {
+        return num1 > num2 ? num1 : num2;
+    }
+
+    public static int FindMinValue(int num1, int num2) {
+        return num1 < num2 ? num1 : num2;
+    }
+
+    public static double FindAverage(double num1, double num2) {
+        double average = (num1 + num2) / 2.0;
+        return average;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter number 1: ");
+        int number1 = sc.nextInt();
+        System.out.print("Enter number 2: ");
+        int number2 = sc.nextInt();
+        int result = FindMaxValue(number1, number2);
+        int result2 = FindMinValue(number1, number2);
+        double result3 = FindAverage((double)number1, (double)number2);
+        System.out.println("Min is " + result2);
+        System.out.println("Max is " + result);
+        System.out.println("Average is " + result3);
+    }
+}
