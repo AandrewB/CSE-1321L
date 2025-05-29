@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class Lab10B {
+    public Lab10B() {
+    }
+
+    public static boolean isValid(double width, double height) {
+        return (width + height) * 2.0 >= 30.0;
+    }
+
+    public static double FindArea(double width, double height) {
+        double area = width * height;
+        return area;
+    }
+
+    public static double FindPerimeter(double width, double height) {
+        double perimeter = (width + height) * 2.0;
+        return perimeter;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        char choice;
+        do {
+            System.out.print("\nEnter width: ");
+            double width = sc.nextDouble();
+            System.out.print("Enter height: ");
+            double height = sc.nextDouble();
+            double ResultA = FindArea(width, height);
+            double ResultP = FindPerimeter(width, height);
+            if (isValid(width, height)) {
+                System.out.print("This is a valid rectangle\n");
+                System.out.print("The area is: " + ResultA);
+                System.out.print("\nThe perimeter is: " + ResultP);
+            } else {
+                System.out.print("\nThis is an invalid rectangle\n");
+            }
+
+            System.out.print("\nDo you want to enter another width and height (Y/N)? : ");
+            choice = sc.next().charAt(0);
+        } while(choice != 'N');
+
+        System.out.print("\nProgram Ends");
+    }
+}
