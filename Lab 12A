@@ -1,0 +1,35 @@
+import java.util.Scanner;
+class Chair {
+    public int numOfLegs;
+    public boolean rolling;
+    public String material;
+
+    public Chair(int nlegs, boolean roll, String mat) {
+        this.numOfLegs = nlegs;
+        this.rolling = roll;
+        this.material = mat;
+    }
+}
+
+
+public class Lab12A {
+    public Lab12A() {
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("You are about to create a chair.\nHow many legs does your chair have: ");
+        int numOfLegs = sc.nextInt();
+        System.out.print("Is your chair rolling (true/false): ");
+        boolean rolling = sc.nextBoolean();
+        sc.nextLine();
+        System.out.print("What is your chair made of: ");
+        String material = sc.nextLine();
+        Chair chair = new Chair(numOfLegs, rolling, material);
+        System.out.print("\nYour chair has " + numOfLegs + " legs, is rolling, and is made of " + material + ".\n\nThis program is going to change that.\n\n");
+        chair.numOfLegs = 4;
+        chair.material = "wood";
+        chair.rolling = false;
+        System.out.print("Your chair has " + chair.numOfLegs + " legs, is not rolling, and is made of " + chair.material + ".");
+    }
+}
