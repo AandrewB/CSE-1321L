@@ -1,0 +1,80 @@
+class BuildingBlueprint {
+    private int numberOfStories;
+    private int numberOfApartments;
+    private float occupancyRate;
+    private boolean isFullyOccupied;
+
+    public BuildingBlueprint() {
+        this.numberOfStories = 10;
+        this.numberOfApartments = 20;
+        this.occupancyRate = 1.0F;
+        this.isFullyOccupied = true;
+    }
+
+    public BuildingBlueprint(int numberOfStories, int numberOfApartments, float occupancyRate) {
+        this.numberOfStories = numberOfStories;
+        this.numberOfApartments = numberOfApartments;
+        this.occupancyRate = occupancyRate;
+        if ((double)occupancyRate == 1.0) {
+            this.isFullyOccupied = true;
+        } else {
+            this.isFullyOccupied = false;
+        }
+
+    }
+
+    public int getNumberOfStories() {
+        return this.numberOfStories;
+    }
+
+    public int getNumberOfApartments() {
+        return this.numberOfApartments;
+    }
+
+    public boolean isFullyOccupied() {
+        return this.isFullyOccupied;
+    }
+
+    public float getOccupancyRate() {
+        return this.occupancyRate;
+    }
+
+    public void setOccupancyRate(float occupancyRate) {
+        this.occupancyRate = occupancyRate;
+        if ((double)occupancyRate == 1.0) {
+            this.isFullyOccupied = true;
+        } else {
+            this.isFullyOccupied = false;
+        }
+
+    }
+}
+import java.io.PrintStream;
+
+public class Lab13A {
+    public Lab13A() {
+    }
+
+    public static void main(String[] args) {
+        BuildingBlueprint buildingOne = new BuildingBlueprint();
+        BuildingBlueprint buildingTwo = new BuildingBlueprint(30, 30, 0.75F);
+        System.out.println("Year 2020:");
+        PrintStream var10000 = System.out;
+        int var10001 = buildingOne.getNumberOfStories();
+        var10000.println("Building 1 has " + var10001 + " floors, " + buildingOne.getNumberOfApartments() + " apartments, and is " + (int)(buildingOne.getOccupancyRate() * 100.0F) + "% occupied. Full? " + buildingOne.isFullyOccupied());
+        var10000 = System.out;
+        var10001 = buildingTwo.getNumberOfStories();
+        var10000.println("Building 2 has " + var10001 + " floors, " + buildingTwo.getNumberOfApartments() + " apartments, and is " + (int)(buildingTwo.getOccupancyRate() * 100.0F) + "% occupied. Full? " + buildingTwo.isFullyOccupied());
+        buildingOne.setOccupancyRate(0.0F);
+        buildingTwo.setOccupancyRate(1.0F);
+        System.out.println("\nMany years pass.\n");
+        System.out.println("Year 2043:");
+        var10000 = System.out;
+        var10001 = buildingOne.getNumberOfStories();
+        var10000.println("Building 1 has " + var10001 + " floors, " + buildingOne.getNumberOfApartments() + " apartments, and is " + (int)(buildingOne.getOccupancyRate() * 100.0F) + "% occupied. Full? " + buildingOne.isFullyOccupied());
+        var10000 = System.out;
+        var10001 = buildingTwo.getNumberOfStories();
+        var10000.println("Building 2 has " + var10001 + " floors, " + buildingTwo.getNumberOfApartments() + " apartments, and is " + (int)(buildingTwo.getOccupancyRate() * 100.0F) + "% occupied. Full? " + buildingTwo.isFullyOccupied());
+        System.out.println("\nLooks like people prefer taller buildings.");
+    }
+}
