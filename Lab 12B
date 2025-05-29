@@ -1,0 +1,53 @@
+class dog {
+    public int age;
+    public double weight;
+    public String name;
+    public String furColor;
+    public String breed;
+
+    dog() {
+    }
+
+    public void Bark() {
+        System.out.println("Woof! Woof!");
+    }
+
+    public void Rename(String newname) {
+        this.name = newname;
+    }
+
+    public void eat(double addweight) {
+        this.weight += addweight;
+    }
+}
+import java.util.Scanner;
+
+public class Lab12B {
+    public Lab12B() {
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        dog obj = new dog();
+        System.out.println("You are about to create a dog.");
+        System.out.print("How old is the dog: ");
+        obj.age = sc.nextInt();
+        System.out.print("How much does the dog weigh: ");
+        obj.weight = sc.nextDouble();
+        System.out.print("What is the dog's name: ");
+        obj.name = sc.next();
+        System.out.print("What color is the dog: ");
+        obj.furColor = sc.next();
+        System.out.print("What breed is the dog: ");
+        obj.breed = sc.next();
+        System.out.print("\n" + obj.name + " is a " + obj.age + " year old " + obj.furColor + " " + obj.breed + " that weighs " + obj.weight + " lbs.\n\n");
+        obj.Bark();
+        System.out.print(obj.name + "is hungry, how much should he eat: ");
+        double addeat = sc.nextDouble();
+        System.out.print(obj.name + "isn't a very good name. What should they be renamed to: ");
+        String rename = sc.next();
+        obj.Rename(rename);
+        obj.eat(addeat);
+        System.out.print("\n" + obj.name + " is a " + obj.age + "year old " + obj.furColor + " " + obj.breed + " that weighs " + obj.weight + " lbs.");
+    }
+}
