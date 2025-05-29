@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Lab11A {
+    public Lab11A() {
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String answer;
+        do {
+            System.out.print("\nMenu\n0) Hello World\n1) Goodbye Moon\n2) Wa1lking on Sunshine\n\nWhat would you like to do: ");
+            int choice = sc.nextInt();
+            switch (choice) {
+                case 0:
+                    System.out.print("\nHello!");
+                    break;
+                case 1:
+                    System.out.print("\nOk, bye.");
+                    break;
+                case 2:
+                    System.out.print("\nWHOA!");
+            }
+
+            System.out.print("\n\nType YES to rerun. ");
+            sc.nextLine();
+            answer = sc.nextLine();
+        } while(answer.equalsIgnoreCase("YES"));
+
+        System.out.print("\nProgram Ends");
+    }
+}
