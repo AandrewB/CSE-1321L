@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class Lab11B {
+    public Lab11B() {
+    }
+
+    public static boolean Length(String password) {
+        return password.length() >= 8;
+    }
+
+    public static boolean Uppercase(String password) {
+        for(int i = 0; i < password.length(); ++i) {
+            char x = password.charAt(i);
+            if (x >= 'A' && x <= 'Z') {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public static boolean Digit(String password) {
+        for(int i = 0; i < password.length(); ++i) {
+            char y = password.charAt(i);
+            if (y >= '0' && y <= '9') {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a password: ");
+        String password = sc.next();
+        boolean Length = Length(password);
+        boolean Uppercase = Uppercase(password);
+        boolean Digit = Digit(password);
+        if (Length && Uppercase && Digit) {
+            System.out.print("Valid password\n\nProgram Ends");
+        } else {
+            System.out.print("Invalid password\n\nProgram Ends");
+        }
+
+    }
+}
