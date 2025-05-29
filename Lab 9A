@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class Lab9A {
+    public Lab9A() {
+    }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int[] Array = new int[11];
+        boolean foundIt = false;
+        System.out.print("Please enter 10 numbers:\n");
+
+        int i;
+        for(i = 1; i < 11; ++i) {
+            System.out.print("Integer " + i + ": ");
+            Array[i] = scan.nextInt();
+        }
+
+        System.out.print("\nWhat is the target number: ");
+        int target = scan.nextInt();
+
+        for(i = 0; i < Array.length; ++i) {
+            if (target == Array[i]) {
+                foundIt = true;
+                break;
+            }
+        }
+
+        if (foundIt) {
+            System.out.print("\nThe target is in the set.");
+        } else {
+            System.out.print("\nThe target is not in the set.");
+        }
+
+    }
+}
